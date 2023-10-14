@@ -20,9 +20,10 @@ namespace ContractAutomation.Services
 
             for (int i = 1; i <= months; i++)
             {
-                double fee = _onlinePaymentService.PaymentFee(value);
                 double installment = _onlinePaymentService.Interest(value, i);
-                double total = value + fee + installment;
+                double partial = value + installment;
+                double fee = _onlinePaymentService.PaymentFee(partial);
+                double total = partial + fee;
                 DateTime dueDate = date.AddMonths(i);
                 contract.AddInstallment(new Installment(dueDate, total));
             }

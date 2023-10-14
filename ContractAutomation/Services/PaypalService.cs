@@ -4,11 +4,15 @@
     {
         public double PaymentFee(double amount)
         {
-            return amount * 0.2;
+            double total = amount * ((float)2 / (float)100);
+            return total;
         }
 
-        public double Interest (double amount, int months) {
-            return amount * (1 * months / 100);
+        public double Interest(double amount, int months)
+        {
+            double percentual = (1 * months) / (float)100;
+            double total = amount * percentual;
+            return total;
         }
     }
 }

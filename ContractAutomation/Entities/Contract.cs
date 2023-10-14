@@ -2,7 +2,7 @@
 {
     internal class Contract
     {
-        public int Number {  get; set; }
+        public int Number { get; set; }
         public DateTime Date { get; set; }
         public double TotalValue { get; set; }
         public List<Installment> Installments { get; set; }
